@@ -12,6 +12,7 @@ def obtener_clases_con_asignaturas(request):
         
     # Procesar los resultados y devolver una respuesta JSON
     data = [{'asignaturaid': fila[0], 'nombreasignatura': fila[1], 'des': fila[2]} for fila in resultados]
+    data2 = {'asignaturaid': '1', 'nombreasignatura': 'mate', 'des': 'estadisticas'}
     print(resultados)
     print(data)
-    return JsonResponse(data, safe=False)
+    return JsonResponse(data2, safe=False)

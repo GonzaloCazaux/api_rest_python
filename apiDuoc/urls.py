@@ -17,12 +17,14 @@ Including another URLconf
 
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from miapp import views
+from miapp.api.router import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('obtener_clases_con_asignaturas/', views.obtener_clases_con_asignaturas, name='obtener_clases_con_asignaturas'),
-
+    path('api/', include(router_get.urls)),
+    path('api/', include(router_get2.urls))
 ]
